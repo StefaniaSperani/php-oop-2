@@ -2,11 +2,11 @@
 require_once 'Category.php';
 class Category
 {
-    public $category;
+    public $name;
 
-    public function __construct($_category)
+    public function __construct($_name)
     {
-        $this->category = $_category;
+        $this->name = $_name;
     }
 }
 
