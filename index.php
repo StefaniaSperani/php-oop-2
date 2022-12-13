@@ -19,9 +19,48 @@ Il cliente effettua il pagamento dei prodotti nel carrello con la carta di credi
 -->
 
 <?php
-include_once __DIR__ . '/Models/Product.php';
+include __DIR__ . '/Models/Product.php';
+include __DIR__ . '/Models/Category.php';
 
-$crocchette = new Product('Royal Canin Urinary S/O 1.5kg', 28, ['Riso', 'glutine di grano', 'proteine di pollame disidratate', 'farina di mais', 'grassi animali', 'idrolizzato di proteine animali', 'glutine di mais', 'sali minerali', 'fibre vegetali', 'olio di pesce', 'olio di soia', 'frutto-oligosaccaridi', 'estratto di fiore di tagete']);
-var_dump($crocchette);
+$crocchette = new Product('Royal Canin Urinary S/O 1.5kg', 28, './images/gatto.jpg', 'pollo', new Category('gatto'));
+//var_dump($crocchette);
+$ossogiocattolo = new Product('Kong', 10, './images/cane.jpg', 'gioco per cani', new Category('cane'));
+//var_dump($ossogiocattolo);
+?>
 
+<?php
+include __DIR__ . './partials/header.php';
+?>
+
+<div class="container">
+    <h1 class="text-center p-3 text-uppercase">Pets Shop</h1>
+    <div class="row">
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <img src="./images/gatto.jpg" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <?php echo $crocchette->name ?>
+                    </h5>
+                    <p class="card-text">
+                        <?php echo $crocchette->description ?>
+                    </p>
+                    <p class="card-text">
+                        <?php echo $crocchette->price ?> €
+                    </p>
+                    <!-- <p class="card-text">
+                        <?php //echo Category::$category; ?>
+                    </p> -->
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- <?php //} ?> -->
+    </div>
+</div>
+
+
+<?php
+include __DIR__ . './partials/footer.php';
 ?>
