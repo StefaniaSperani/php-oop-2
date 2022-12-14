@@ -23,7 +23,7 @@ include __DIR__ . '/Models/Food.php';
 include __DIR__ . '/Models/Toy.php';
 include __DIR__ . '/Models/Category.php';
 include __DIR__ . '/database.php';
-
+include __DIR__ . '/Exception/exception.php';
 
 
 $products = [];
@@ -69,6 +69,12 @@ include __DIR__ . './partials/header.php';
         </div>
         <?php } ?>
     </div>
+    <h2 class="text-center p-3 text-uppercase"> Exception senza errore:
+        <?php echo multiplication(5) ?>
+    </h2>
+    <h2 class="text-center p-3 text-uppercase text-danger"> Exception con errore:
+        <?php echo multiplication('ciao') ?>
+    </h2>
 </div>
 
 
