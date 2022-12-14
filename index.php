@@ -73,7 +73,12 @@ include __DIR__ . './partials/header.php';
         <?php echo multiplication(5) ?>
     </h2>
     <h2 class="text-center p-3 text-uppercase text-danger"> Exception con errore:
-        <?php echo multiplication('ciao') ?>
+        <?php try {
+            echo multiplication('ciao');
+        } catch (Exception $e) {
+            echo 'Eccezione:' . ' ' . $e->getMessage();
+        }
+        ?>
     </h2>
 </div>
 
